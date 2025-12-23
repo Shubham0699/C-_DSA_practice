@@ -32,6 +32,7 @@ now we will create array to linkedlist function
 6.there will be temp node pointer pointing at every index of array for every iteration
 7.temp will always be mover's next and we will move forward mover
 */
+
  Node* arraytoLL(vector<int>&arr){
     Node* head= new Node(arr[0]);
     Node* mover = head;
@@ -43,6 +44,41 @@ now we will create array to linkedlist function
     return head;
  }
 
+ /*
+ 1.now to find length we will just take a cnt variable initalizingat 0 
+ and after every traversal its ciunt is going to be increased 
+ so basically cnt 0 till cnt n
+ 2.n being the size of ll
+ */
+
+int lengthofLL(Node* head){
+    int cnt=0;
+
+        /*for traversal 
+    1. first and foremost rule of linkedlist is never mess with head so 
+    we will keep one pointer at head which will traverse furthure 
+    2. then we will use loop using traversal pointer
+    3. and then just printing data of the pointer 
+     */
+
+     Node* temp=head;
+     while(temp){
+        
+        cnt++;
+        temp=temp->next;
+        
+     }
+     return cnt;
+}
+
+int chekifPresent(Node* head, int val){
+    Node* temp= head;
+    while(temp){
+        if(temp->data==val) return 1;
+        temp=temp->next;
+    }
+    return 0;
+}
 
 
 int main(){
@@ -54,22 +90,29 @@ int main(){
     so when we do cout<< y , we will get memory addres, to access the element
     we do, y->data;
     */
+
     Node* y= new Node{arr1[0],nullptr};
     cout<<y<<endl;
     cout<<y->data<<endl;
-
 
 
     /*here basically we are creating x object not a pointer 
     so now x is a box which stores data and pointer(here its a nullptr)
     to access its data we will do, x.data
     */
+
     Node x = Node{arr1[1],nullptr};
     cout<<x.data<<endl;
 
     Node* H= arraytoLL(arr1);
-    cout<<H->data<<endl;
-    
+    cout<<"head of linkedlist converted from array: "<<H->data<<endl;
+
+    int count= lengthofLL(H);
+    cout<<"lengt of LL: "<<count<<endl;
+
+    int n= chekifPresent(H,0);
+    cout<<"output of if present: "<<n<<endl;
+
 }
 
 /*
