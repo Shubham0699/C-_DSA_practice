@@ -80,6 +80,14 @@ int chekifPresent(Node* head, int val){
     return 0;
 }
 
+void printLL(Node* head){
+    Node* temp=head;
+    while(temp){
+        cout<<temp->data<<endl;
+        temp=temp->next;
+    }
+}
+
 
 int main(){
     vector<int> arr1 = {2,4,7,9};
@@ -112,6 +120,9 @@ int main(){
 
     int n= chekifPresent(H,0);
     cout<<"output of if present: "<<n<<endl;
+
+    cout<<"printing the LL:"<<endl;
+    printLL(H);
 
 }
 
