@@ -1,4 +1,4 @@
-//this one is for deletion and insertion:
+//this one is for deletion:
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -89,7 +89,7 @@ int main(){
     printLL(h2);
     */
 
-    node* h3 = deletek(H,3);
+    node* h3 = deletek(H,1);
     cout<<"whole LL after deletion at kth position:"<<endl;
     printLL(h3);
    
